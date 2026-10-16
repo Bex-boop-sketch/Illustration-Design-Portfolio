@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<header class="top-section">
+    <nav class="navigation">
+        <ul>
+            <li><a href="About.html" target="_blank">ABOUT</a></li>
+            <li><a href="WORK.html" target="_blank">WORK</a></li>
+            <li><a href="CONTACT.html" target="_blank">CONTACT</a></li>
+            <li><a href="TOOLKIT.html" target="_blank">TOOLKIT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="resources-section">
+    <div>
+        <h6>Examples of my work</h6>
+		<h3>Scroll down to check it out!</h3>
+    </div>
+</section>
+	
+<!-- Gallery Section with Index Triggers -->
+<section class="gallery-section">
+    <h2>Featured Projects</h2>
+    <div class="container"> 
+        <div class="column" onclick="openLightbox(0)">
+            <img src="Images/Garner.Remakes.project 1.jpg" alt="Project 1">
+        </div>
+      
+        <div class="column" onclick="openLightbox(1)">
+            <img src="Images/Garner.Fish Pop up Card.jpg" alt="Fish Pop up Card">
+        </div> 
+       
+        <div class="column" onclick="openLightbox(2)" width="120" height="100">>
+            <img src="Images/Postcard grad mockup.png" alt="Postcard mockup">
+        </div>
+      
+        <div class="column" onclick="openLightbox(3)">
+            <img src="Images/Garner.ArtD395.Totebag mock up.png" alt="Totebag mockup">
+        </div>
+
+        <!-- Newly Added Image 5 -->
+        <div class="column" onclick="openLightbox(4)">
+            <img src="Images/CommuterGraphic.Mockup.jpeg" alt="Project 5"> 
+        </div>
+
+        <!-- Newly Added Image 6 -->
+        <div class="column" onclick="openLightbox(5)">
+            <img src="Images/Garner.Halloween.jpg" alt="Project 6">
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal Overlay with Next/Prev Controls -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <a class="prev-lightbox" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next-lightbox" onclick="changeImage(1)">&#10095;</a>
+    
+    <div class="lightbox-content-wrapper">
+		<img id="lightbox-img" src="" alt="Full Screen View">
+        <p id="lightbox-caption"></p>
+    </div>
+</div>
+
+<!-- About My Work Section -->
+<section class="about-work-section">
+    <div class="content-wrapper">
+        <h2>ABOUT MY WORK</h2>
+        <p>This webpage is a example of my illustration work. I enjoy blending well crafted illustrations and text to create eyecatching designs. Below is a link to my full portfolio!.</p>
+        <a href="WORK.html" target="_blank">
+            <button class="button2">Portfolio</button>
+        </a>
+    </div>
+</section>
+
+<!-- Lightbox JavaScript Controller with Gallery Array -->
+<script>
+    const galleryItems = [
+        { src: 'Images/Garner.Remakes.project 1.jpg', caption: 'Digitally drawn in procreate a series of re design of the DVD cases from the movie series How to Train your Dragon.' },
+        { src: 'Images/Garner.Fish Pop up Card.jpg', caption: 'A card digitally illustrated in Procreate about how it is ok to be unique, made into a physical prototype.' },
+        { src: 'Images/Postcard grad mockup.png', caption: 'A graduation card digitally illustrated in Procreate created for North Central College graduates.' },
+        { src: 'Images/Garner.ArtD395.Totebag mock up.png', caption: 'A tote bag design created in illustrator. Combines image and text to create balance.' },
+        { src: 'Images/CommuterGraphic.Mockup.jpeg', caption: 'A poster combining type and image to make a promotional poster for the North Central Commuter Club.' },
+        { src: 'Images/Garner.Halloween.jpg', caption: 'A Halloween design with type and image for the North Central College Presidents Instagram.' }
+    ];
+    
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        updateLightboxContent();
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex >= galleryItems.length) {
+            currentIndex = 0; // Loop back to the first image
+        } else if (currentIndex < 0) {
+            currentIndex = galleryItems.length - 1; // Loop to the last image
+        }
+        updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+        const img = document.getElementById('lightbox-img');
+        const caption = document.getElementById('lightbox-caption');
+        img.src = galleryItems[currentIndex].src;
+        caption.textContent = galleryItems[currentIndex].caption;
+    }
+
+    window.onclick = function(event) {
+        const lightbox = document.getElementById('lightbox');
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    }
+</script>
+
+<footer>
+    <h4>Credits and Citations</h4>
+    <ul>
+        <li><cite><a href="https://www.flux-academy.com/blog/the-ultimate-guide-to-choosing-fonts" target="_blank">The Ultimate Guide to Choosing Fonts</a></cite> by Flux Academy</li>
+        <li><cite><a href="https://www.flux-academy.com/blog/ultimate-guide-to-choosing-colors-for-web-design" target="_blank">Ultimate Guide To Choosing Colors for Web Design</a></cite> by Stephanie Corrigan</li>
+        <li><cite><a href="https://dribbble.com/stories/2018/12/19/choosing-colors-for-web-design-a-practical-ui-color-application-guide" target="_blank">Choosing colors for web design</a></cite> by Renee Fleck</li>
+        <li><cite><a href="https://dribbble.com/resources/education/principles-of-design" target="_blank">11 Principles of Design</a></cite> by Renee Fleck</li>
+		 <li><cite><a href="https://share.google/mY4D2VgByIqLXARrg" target="_blank">Google Gemini</a></cite> by Google</li>
+        <li><cite><a href="https://tilda.education/en/web-design-principles" target="_blank">10 Principles Of Good Web Design</a></cite></li>
+		<li><cite><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></cite></li>
+    </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+@charset "UTF-8";
+
+/* Global & Typography Styling */
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f9eae1;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    color: #7d4f50;
+}
+
+h2 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 2.7rem;
+    color: #f9eae1;
+    margin-top: 0;
+}
+
+h5 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 2.7rem;
+    color: #7d4f50;
+    margin: 0;
+}
+
+h3, h4 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    color: #7d4f50;
+}
+
+h7 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #7d4f50;
+}
+
+h6 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    color: #f9eae1;
+}
+
+p {
+    font-size: 1rem;
+    max-width: 700px;
+    margin-bottom: 1rem;
+    color: #7d4f50;
+}
+
+.p2 {
+    color: #f9eae1;
+}
+
+q {
+    font-style: italic;
+    font-size: 1.5rem;
+    display: block;
+    margin: 1.5rem 0;
+    color: #7d4f50;
+}
+
+/* Section Structure */
+section {
+    padding: 60px 10%;
+}
+
+/* Horizontal Navigation Bar */
+.top-section {
+    background-color: #f9eae1;
+}
+
+.navigation {
+    background-color: #cc8b86;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li a {
+    color: #f9eae1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navigation li a:hover {
+    color: #7d4f50;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f9eae1;
+    background-image: url("Images/herographic.png");
+    background-size: 94.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Typography Section */
+.typography-section {
+    background-color: #cc8b86;
+}
+
+.typography-section .centered-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 75%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* About My Work Section */
+.about-work-section {
+    background-color: #cc8b86;
+}
+
+.about-work-section p {
+    color: #f9eae1;
+}
+
+.about-work-section .content-wrapper {
+    max-width: 800px;
+}
+
+/* Color Section */
+.color-section {
+    background-color: #f9eae1;
+    background-image: url("Images/color.png");
+    background-size: 40%;
+    background-position: right;
+    background-repeat: no-repeat;
+    min-height: 100px;
+}
+
+.color-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Resources Section */
+.resources-section {
+    background-color: #cc8b86;
+    background-image: url("Images/resource.png");
+    background-size: 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    min-height: 400px;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: #f9eae1;
+}
+
+.gallery-section h2 {
+    color: #7d4f50;
+    margin-bottom: 30px;
+}
+
+/* Photo Grid Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 0 1 22%;
+    min-width: 220px;
+    max-width: 280px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.column img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.column img:hover {
+    transform: scale(1.03);
+}
+
+/* --- Lightbox Modal Styles --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.lightbox-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    max-height: 85vh;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 68vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox-caption {
+    color: #f9eae1;
+    font-size: 1.25rem;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 750px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #f9eae1;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-lightbox:hover {
+    color: #cc8b86;
+}
+
+/* Next and Previous Arrow Controls */
+.prev-lightbox, .next-lightbox {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    padding: 16px;
+    color: #f9eae1;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+
+.prev-lightbox {
+    left: 40px;
+}
+
+.next-lightbox {
+    right: 40px;
+}
+
+.prev-lightbox:hover, .next-lightbox:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #cc8b86;
+}
+
+/* Buttons */
+.button {
+    background-color: #7d4f50;
+    border: none;
+    color: #f9eae1;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #CC8b86;
+}
+
+.button2 {
+    background-color: #f9eae1;
+    border: none;
+    color: #CC8b86;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.button2:hover {
+    background-color: #7d4f50;
+    color: #f9eae1;
+}
+
+/* --- Contact Page Styles --- */
+.contact-section {
+    background-color: #f9eae1;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper {
+    width: 100%;
+    max-width: 650px;
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    color: #7d4f50;
+    font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: 'DM Sans', sans-serif;
+    padding: 12px 16px;
+    border: 2px solid #cc8b86;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #7d4f50;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #7d4f50;
+}
+
+/* --- About Page Side-by-Side Layout --- */
+.about-page-section {
+    background-color: #f9eae1;
+    padding: 60px 10%;
+}
+
+.about-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-flex-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.about-image-column {
+    flex: 1 1 250px;
+    max-width: 320px;
+}
+
+.about-image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-column {
+    flex: 2 1 400px;
+}
+
+/* --- Toolkit Page & Expandable Cards Styles --- */
+.toolkit-section {
+    background-color: #cc8b86;
+    padding: 60px 10%;
+    min-height: 70vh;
+}
+
+.toolkit-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.toolkit-section h1 {
+    color: #f9eae1;
+    font-family: "Valley Sans", sans-serif;
+    font-size: 4rem;
+    margin-bottom: 0.1rem;
+}
+
+.toolkit-section h3.section-subtitle {
+    color: #f9eae1;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.toolkit-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/* Unexpanded Card: Brown (#7d4f50) with Cream text (#f9eae1) */
+.toolkit-card {
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1 1 280px;
+    max-width: 400px;
+    box-sizing: border-box;
+    background-color: #7d4f50;
+    border: 2px solid #f9eae1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toolkit-card h3 {
+    color: #f9eae1;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Valley Sans", sans-serif;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+/* Expanded Card: Cream (#f9eae1) with Brown text (#7d4f50) */
+.toolkit-card.expanded {
+    background-color: #f9eae1;
+    border-color: #7d4f50;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.toolkit-card.expanded h3 {
+    color: #7d4f50;
+}
+
+/* Hidden description text by default */
+.toolkit-card p.card-desc {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    color: #7d4f50;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.toolkit-card.expanded p.card-desc {
+    max-height: 250px;
+    opacity: 1;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* Navigation Arrows inside Expanded Portion */
+.card-nav-container {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid #cc8b86;
+    padding-top: 12px;
+}
+
+.toolkit-card.expanded .card-nav-container {
+    display: flex;
+}
+
+.toolkit-arrow-btn {
+    background-color: #7d4f50;
+    color: #f9eae1;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toolkit-arrow-btn:hover {
+    background-color: #cc8b86;
+    color: #f9eae1;
+    transform: scale(1.08);
+}
+
+.card-counter {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7d4f50;
+}
+
+.home-button-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* --- Cream & Brown Footer Styling --- */
+footer {
+    background-color: #f9eae1;
+    color: #7d4f50;
+    padding: 60px 10% 40px 10%;
+    border-top: 3px solid #7d4f50;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 2.2rem;
+    color: #7d4f50;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #7d4f50;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.footer-links-group {
+    flex: 2 1 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1 1 180px;
+}
+
+.footer-column h4 {
+    font-family: "Valley Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #7d4f50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column li a {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    color: #7d4f50;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column li a:hover {
+    color: #cc8b86;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(125, 79, 80, 0.2);
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    color: #7d4f50;
+}
