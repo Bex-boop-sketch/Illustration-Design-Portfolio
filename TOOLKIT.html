@@ -12,84 +12,13 @@
     
     <!-- External CSS -->
     <link href="style.css" rel="stylesheet" type="text/css">
-    
-    <!-- Inline styles for expandable cards & arrows inside -->
-    <style>
-        .toolkit-card {
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        /* Hide description text by default, show when 'expanded' class is added */
-        .toolkit-card p.card-desc {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            margin-top: 0;
-            margin-bottom: 0;
-            transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
-        }
-
-        .toolkit-card.expanded p.card-desc {
-            max-height: 250px;
-            opacity: 1;
-            margin-top: 15px;
-            margin-bottom: 20px;
-        }
-
-        .toolkit-card.expanded {
-            border-color: #7d4f50;
-            box-shadow: 0 8px 25px rgba(125, 79, 80, 0.2);
-        }
-
-        /* Arrows inside the expanded portion */
-        .card-nav-container {
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            border-top: 1px solid #cc8b86;
-            padding-top: 12px;
-        }
-
-        .toolkit-card.expanded .card-nav-container {
-            display: flex;
-        }
-
-        .toolkit-arrow-btn {
-            background-color: #7d4f50;
-            color: #f9eae1;
-            border: none;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .toolkit-arrow-btn:hover {
-            background-color: #cc8b86;
-            transform: scale(1.08);
-        }
-
-        .card-counter {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #7d4f50;
-        }
-    </style>
 </head>
 <body>
 
 <header class="top-section">
     <nav class="navigation">
         <ul>
+			<li><a href="index.html">HOME</a></li>
             <li><a href="index.html">ABOUT</a></li>
             <li><a href="WORK.html" target="_blank">WORK</a></li>
             <li><a href="CONTACT.html" target="_blank">CONTACT</a></li>
@@ -102,104 +31,159 @@
 <section class="toolkit-section">
     <div class="toolkit-wrapper">
         <h1>My Design Toolkit!</h1>
-        <h3>The software, applications, and resources I use on the daily to bring my creative ideas to life.</h3>
+        <h3 class="section-subtitle">The software, applications, and resources I use on the daily to bring my creative ideas to life.</h3>
         
         <!-- Toolkit Cards Grid -->
         <div class="toolkit-grid">
-            <div class="toolkit-card" onclick="toggleCard(0)">
+            <div class="toolkit-card">
                 <h3>Adobe Creative Cloud</h3>
                 <p class="card-desc">I love the Adobe Creative Cloud, I use it for layout, typography, illustrations, and editing! It is my one stop shop.</p>
                 <div class="card-nav-container">
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(-1, event)">&#10094;</button>
+                    <button class="toolkit-arrow-btn prev-btn" type="button">&#10094;</button>
                     <span class="card-counter">1 of 4</span>
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(1, event)">&#10095;</button>
+                    <button class="toolkit-arrow-btn next-btn" type="button">&#10095;</button>
                 </div>
             </div>
 
-            <div class="toolkit-card" onclick="toggleCard(1)">
+            <div class="toolkit-card">
                 <h3>Procreate&nbsp;</h3>
                 <p class="card-desc">I use this program for my indepth non vector designs. It is great for very heavy layered and detail oriented pieces.</p>
                 <div class="card-nav-container">
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(-1, event)">&#10094;</button>
+                    <button class="toolkit-arrow-btn prev-btn" type="button">&#10094;</button>
                     <span class="card-counter">2 of 4</span>
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(1, event)">&#10095;</button>
+                    <button class="toolkit-arrow-btn next-btn" type="button">&#10095;</button>
                 </div>
             </div>
 
-            <div class="toolkit-card" onclick="toggleCard(2)">
+            <div class="toolkit-card">
                 <h3>Adobe Fonts&nbsp;</h3>
                 <p class="card-desc">My favorite site to ge essential tyoe families, font styles, and unique fonts for my designs.</p>
                 <div class="card-nav-container">
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(-1, event)">&#10094;</button>
+                    <button class="toolkit-arrow-btn prev-btn" type="button">&#10094;</button>
                     <span class="card-counter">3 of 4</span>
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(1, event)">&#10095;</button>
+                    <button class="toolkit-arrow-btn next-btn" type="button">&#10095;</button>
                 </div>
             </div>
 
-            <div class="toolkit-card" onclick="toggleCard(3)">
+            <div class="toolkit-card">
                 <h3>Pinterest&nbsp;</h3>
                 <p class="card-desc">A great place for insperation and finding new styles to try!.</p>
                 <div class="card-nav-container">
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(-1, event)">&#10094;</button>
+                    <button class="toolkit-arrow-btn prev-btn" type="button">&#10094;</button>
                     <span class="card-counter">4 of 4</span>
-                    <button class="toolkit-arrow-btn" onclick="navigateCards(1, event)">&#10095;</button>
+                    <button class="toolkit-arrow-btn next-btn" type="button">&#10095;</button>
                 </div>
             </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="home-button-container">
+            <a href="index.html">
+                <button class="button">Back to Home</button>
+            </a>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <h4>Credits and Citations</h4>
-    <ul>
-        <li><cite><a href="https://www.flux-academy.com/blog/the-ultimate-guide-to-choosing-fonts" target="_blank">The Ultimate Guide to Choosing Fonts</a></cite> by Flux Academy</li>
-        <li><cite><a href="https://www.flux-academy.com/blog/ultimate-guide-to-choosing-colors-for-web-design" target="_blank">Ultimate Guide To Choosing Colors for Web Design</a></cite> by Stephanie Corrigan</li>
-        <li><cite><a href="https://dribbble.com/stories/2018/12/19/choosing-colors-for-web-design-a-practical-ui-color-application-guide" target="_blank">Choosing colors for web design</a></cite> by Renee Fleck</li>
-        <li><cite><a href="https://dribbble.com/resources/education/principles-of-design" target="_blank">11 Principles of Design</a></cite> by Renee Fleck</li>
-        <li><cite><a href="https://share.google/mY4D2VgByIqLXARrg" target="_blank">Google Gemini</a></cite> by Google</li>
-        <li><cite><a href="https://tilda.education/en/web-design-principles" target="_blank">10 Principles Of Good Web Design</a></cite></li>
-        <li><cite><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></cite></li>
-    </ul>
+    <div class="footer-container">
+        <!-- Brand / Logo Area -->
+      <div class="footer-brand">
+        <h2>BEX DESIGNS</h2>
+          <p>Illustrative&nbsp; Portfolio</p>
+        </div>
+
+        <!-- Stacked & Horizontal Link Columns -->
+        <div class="footer-links-group">
+            <div class="footer-column">
+                <h4>TYPOGRAPHY</h4>
+                <ul>
+                    <li><a href="https://www.flux-academy.com/blog/the-ultimate-guide-to-choosing-fonts" target="_blank">Choosing Fonts</a></li>
+                    <li><a href="https://tilda.education/en/web-design-principles" target="_blank">Web Design Principles</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>COLOR & UI</h4>
+                <ul>
+                    <li><a href="https://www.flux-academy.com/blog/ultimate-guide-to-choosing-colors-for-web-design" target="_blank">Choosing Colors</a></li>
+                    <li><a href="https://dribbble.com/stories/2018/12/19/choosing-colors-for-web-design-a-practical-ui-color-application-guide" target="_blank">UI Color Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="https://dribbble.com/resources/education/principles-of-design" target="_blank">Principles of Design</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                    <li><a href="https://share.google/mY4D2VgByIqLXARrg" target="_blank">Google Gemini</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+    Bex Designs </div>
 </footer>
 
-<!-- Safe Interactive Script -->
+<!-- Safe, Fail-Proof JavaScript -->
 <script>
-    var cards = document.querySelectorAll('.toolkit-card');
-    var activeCardIndex = -1;
+    document.addEventListener('DOMContentLoaded', function () {
+        var cards = document.querySelectorAll('.toolkit-card');
+        var activeIndex = -1;
 
-    function toggleCard(index) {
-        if (activeCardIndex === index) {
-            cards[index].classList.remove('expanded');
-            activeCardIndex = -1;
-        } else {
+        function setExpandedCard(index) {
             for (var i = 0; i < cards.length; i++) {
                 cards[i].classList.remove('expanded');
             }
-            cards[index].classList.add('expanded');
-            activeCardIndex = index;
-        }
-    }
-
-    function navigateCards(direction, event) {
-        event.stopPropagation(); // Prevents the click from re-toggling the card
-
-        if (activeCardIndex === -1) {
-            activeCardIndex = 0;
-        } else {
-            activeCardIndex += direction;
-            if (activeCardIndex >= cards.length) {
-                activeCardIndex = 0;
-            } else if (activeCardIndex < 0) {
-                activeCardIndex = cards.length - 1;
+            if (index >= 0 && index < cards.length) {
+                cards[index].classList.add('expanded');
+                activeIndex = index;
+            } else {
+                activeIndex = -1;
             }
         }
-        
-        for (var i = 0; i < cards.length; i++) {
-            cards[i].classList.remove('expanded');
-        }
-        cards[activeCardIndex].classList.add('expanded');
-    }
+
+        cards.forEach(function (card, index) {
+            card.addEventListener('click', function (e) {
+                if (e.target.closest('.toolkit-arrow-btn')) {
+                    return;
+                }
+                if (activeIndex === index) {
+                    setExpandedCard(-1);
+                } else {
+                    setExpandedCard(index);
+                }
+            });
+
+            var prevBtn = card.querySelector('.prev-btn');
+            var nextBtn = card.querySelector('.next-btn');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var newIndex = activeIndex - 1;
+                    if (newIndex < 0) {
+                        newIndex = cards.length - 1;
+                    }
+                    setExpandedCard(newIndex);
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var newIndex = activeIndex + 1;
+                    if (newIndex >= cards.length) {
+                        newIndex = 0;
+                    }
+                    setExpandedCard(newIndex);
+                });
+            }
+        });
+    });
 </script>
 
 </body>
